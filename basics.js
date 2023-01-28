@@ -1,37 +1,42 @@
-const flowers = ["Dalia", "Marigold", "Tulip", "Rose", "Lily", "Orchid"]
+//basic function syntax
 
-console.log("------------FOR OF LOOP--------------");
-
-for (let flower of flowers){
-    console.log (`${flower}`);
+function helloMe(name){
+    return `Hello ${name}`
 }
 
-console.log("------------WHILE LOOP--------------");
+console.log(helloMe("Robert"));
 
-let fl_count = 0;
-while(fl_count < flowers.length){
-    console.log(flowers[fl_count]);
-    fl_count+=1;
+//functions in js is an object
+
+const addition = function (num1, num2){
+    return num1+num2;
 }
 
-console.log("------------SIMPLE FOR LOOP--------------");
+console.log(addition(45,23))
 
-for(let i= 0; i<= 30; i+=5){
-    console.log(i);
+//functions as a return value of another function
+
+function multiplyBy(x){
+    return function(n){
+        return x*n;
+    }
 }
 
-console.log("------------FOR IN LOOP--------------");
+const triple = multiplyBy(3); //returns triple as a function
+const half = multiplyBy(0.5);
+console.log(triple(30));
+console.log(half(70));
 
-const car = {type:"Fiat", model:"500", color:"white", drive: "2WD", year:"2016"};
+//callback- functions that accept functions as arguments
 
-for(let prop in car){
-    console.log(`${prop.toUpperCase()} --> ${car[prop]}`);
-}
+myArr = [10,24,34,56,68,72,88,95]
 
-//same thing using Object.keys(obj_name):
+const arrDouble = myArr.map(function(x){
+    return x*2;
+})
 
-for(let pr of Object.keys(car)){ //notice using "FOR OF" loop
-    console.log(`${pr} --> ${car[pr]}`);
-}
+const arrTriple = myArr.map (x => x*3); //arrow function
 
-//Object.values(obj_name) returns values
+
+console.log(arrDouble)
+console.log(arrTriple)
