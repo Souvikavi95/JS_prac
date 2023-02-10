@@ -29,14 +29,19 @@ console.log(half(70));
 
 //callback- functions that accept functions as arguments
 
-myArr = [10,24,34,56,68,72,88,95]
+nums = [10,24,34,56,68,72,88,95]
 
-const arrDouble = myArr.map(function(x){
+const numsDouble = nums.map(function(x){
     return x*2;
 })
 
-const arrTriple = myArr.map (x => x*3); //arrow function
+const numsTriple = nums.map (x => x*3); //arrow function
 
 
-console.log(arrDouble)
-console.log(arrTriple)
+console.log(numsDouble)
+console.log(numsTriple)
+
+//forEach runs function for each element one at a time, idx is optional param
+nums.forEach(function (el, idx) { 
+    console.log(idx ,el)
+});
